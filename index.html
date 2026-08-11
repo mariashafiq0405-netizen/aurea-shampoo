@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ÁUREA | Beleza que transforma</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+body {
+    font-family: Arial, sans-serif;
+    background: #f7f5ed;
+    color: #26352b;
+    line-height: 1.6;
+}
+/* MENU */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(247,245,237,0.96);
+    border-bottom: 1px solid #dfe4dc;
+}
+nav {
+    max-width: 1100px;
+    margin: auto;
+    padding: 18px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo {
+    font-size: 26px;
+    font-weight: bold;
+    letter-spacing: 4px;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 22px;
+}
+nav a {
+    text-decoration: none;
+    color: #26352b;
+    font-weight: bold;
+}
+/* INÍCIO */
+.hero {
+    min-height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 50px 25px;
+    background: linear-gradient(135deg,#dfe9d9,#f7f5ed);
+}
+.hero-content {
+    max-width: 800px;
+}
+.hero h1 {
+    font-size: clamp(55px,12vw,110px);
+    letter-spacing: 12px;
+}
+.hero h2 {
+    font-size: 25px;
+    font-weight: normal;
+    margin: 10px 0 25px;
+}
+.hero p {
+    font-size: 18px;
+    max-width: 600px;
+    margin: auto;
+}
+.button {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 14px 30px;
+    background: #4f6b53;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+}
+/* SEÇÕES */
+section {
+    max-width: 1100px;
+    margin: auto;
+    padding: 85px 25px;
+}
+.title {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+.subtitle {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto 45px;
+    color: #667268;
+}
+/* SOBRE */
+.about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+.box {
+    background: white;
+    padding: 35px;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0,0,0,.06);
+}
+.box h3 {
+    font-size: 24px;
+    margin-bottom: 12px;
+}
+/* PRODUTO */
+.product {
+    max-width: none;
+    background: #dfe9d9;
+}
+.product-content {
+    max-width: 1100px;
+    margin: auto;
+    padding: 0 25px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+.bottle {
+    width: 210px;
+    height: 350px;
+    margin: auto;
+    background: #f7f5ed;
+    border-radius: 30px 30px 45px 45px;
+    box-shadow: 15px 20px 40px rgba(0,0,0,.15);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.bottle:before {
+    content: "";
+    position: absolute;
+    top: -55px;
+    width: 80px;
+    height: 60px;
+    background: #4f6b53;
+    border-radius: 10px 10px 5px 5px;
+}
+.label {
+    text-align: center;
+    border-top: 1px solid #718b72;
+    border-bottom: 1px solid #718b72;
+    padding: 25px 10px;
+    width: 80%;
+}
+.label h3 {
+    letter-spacing: 4px;
+}
+.product-info h2 {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+.product-info ul {
+    margin: 20px 0;
+    padding-left: 20px;
+}
+.product-info li {
+    margin-bottom: 8px;
+}
+/* SUSTENTABILIDADE */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 25px;
+}
+.card {
+    background: white;
+    padding: 30px;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0,0,0,.05);
+}
+.icon {
+    font-size: 45px;
+    margin-bottom: 12px;
+}
+/* PROCESSO */
+.steps {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 20px;
+}
+.step {
+    text-align: center;
+    padding: 20px;
+}
+.number {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #4f6b53;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 15px;
+    font-weight: bold;
+}
+/* CONTATO */
+.contact {
+    max-width: none;
+    background: #26352b;
+    color: white;
+    text-align: center;
+}
+.contact-content {
+    max-width: 700px;
+    margin: auto;
+    padding: 0 25px;
+}
+.contact .button {
+    background: white;
+    color: #26352b;
+}
+/* RODAPÉ */
+footer {
+    background: #18231b;
+    color: #ccd4cd;
+    text-align: center;
+    padding: 25px;
+    font-size: 14px;
+}
+/* CELULAR */
+@media(max-width:750px) {
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+    nav ul {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+    .about,
+    .product-content {
+        grid-template-columns: 1fr;
+    }
+    .cards {
+        grid-template-columns: 1fr;
+    }
+    .steps {
+        grid-template-columns: 1fr 1fr;
+    }
+    .hero h1 {
+        letter-spacing: 6px;
+    }
+}
+</style>
+</head>
+<body>
+<header>
+<nav>
+<div class="logo">ÁUREA</div>
+<ul>
+<li><a href="#sobre">Sobre</a></li>
+<li><a href="#produto">Produto</a></li>
+<li><a href="#sustentabilidade">Sustentabilidade</a></li>
+<li><a href="#processo">Produção</a></li>
+</ul>
+</nav>
+</header>
+<section class="hero">
+<div class="hero-content">
+<h1>ÁUREA</h1>
+<h2>Beleza que transforma.</h2>
+<p>
+Cosméticos sustentáveis desenvolvidos para cuidar
+dos cabelos enquanto respeitam o planeta.
+</p>
+<a href="#produto" class="button">
+Conheça nosso produto
+</a>
+</div>
+</section>
+<section id="sobre">
+<h2 class="title">Sobre a ÁUREA</h2>
+<p class="subtitle">
+Uma proposta de beleza consciente que une cuidado,
+inovação e responsabilidade ambiental.
+</p>
+<div class="about">
+<div class="box">
+<h3>Nossa missão</h3>
+<p>
+Criar produtos de higiene e beleza que proporcionem
+cuidado aos consumidores sem deixar de considerar
+os impactos causados ao meio ambiente.
+</p>
+</div>
+<div class="box">
+<h3>Nosso propósito</h3>
+<p>
+Incentivar escolhas mais conscientes através de
+alternativas sustentáveis aos produtos tradicionais,
+mostrando que cuidar de si também pode significar
+cuidar do planeta.
+</p>
+</div>
+</div>
+</section>
+<section class="product" id="produto">
+<div class="product-content">
+<div class="bottle">
+<div class="label">
+<h3>ÁUREA</h3>
+<p>
+SHAMPOO<br>
+SUSTENTÁVEL
+</p>
+</div>
+</div>
+<div class="product-info">
+<h2>Nosso Shampoo</h2>
+<p>
+Um shampoo pensado para unir limpeza,
+cuidado capilar e responsabilidade ambiental.
+</p>
+<ul>
+<li>Ingredientes de origem vegetal</li>
+<li>Formulação suave para os cabelos</li>
+<li>Menor impacto ambiental</li>
+<li>Embalagem pensada para reduzir resíduos</li>
+<li>Alternativa mais consciente aos produtos convencionais</li>
+</ul>
+<a href="#sustentabilidade" class="button">
+Conheça nossa proposta
+</a>
+</div>
+</div>
+</section>
+<section id="sustentabilidade">
+<h2 class="title">Por que sustentável?</h2>
+<p class="subtitle">
+A sustentabilidade não é apenas sobre o produto.
+É sobre pensar em todo o ciclo de vida dele.
+</p>
+<div class="cards">
+<div class="card">
+<div class="icon">🌱</div>
+<h3>Meio ambiente</h3>
+<p>
+A proposta busca reduzir impactos ambientais
+através de escolhas mais responsáveis de
+ingredientes e embalagens.
+</p>
+</div>
+<div class="card">
+<div class="icon">♻️</div>
+<h3>Menos resíduos</h3>
+<p>
+A utilização de materiais recicláveis ou
+reaproveitáveis contribui para diminuir
+a quantidade de resíduos descartados.
+</p>
+</div>
+<div class="card">
+<div class="icon">💚</div>
+<h3>Consumo consciente</h3>
+<p>
+A ÁUREA incentiva consumidores a refletirem
+sobre a origem, utilização e descarte
+dos produtos que compram.
+</p>
+</div>
+</div>
+</section>
+<section id="processo">
+<h2 class="title">Como o shampoo é produzido</h2>
+<p class="subtitle">
+Etapas propostas para a produção de um shampoo
+com uma abordagem mais sustentável.
+</p>
+<div class="steps">
+<div class="step">
+<div class="number">1</div>
+<h3>Seleção</h3>
+<p>
+Seleção dos ingredientes e matérias-primas
+utilizados na formulação.
+</p>
+</div>
+<div class="step">
+<div class="number">2</div>
+<h3>Mistura</h3>
+<p>
+Os ingredientes são incorporados gradualmente
+para formar a base do shampoo.
+</p>
+</div>
+<div class="step">
+<div class="number">3</div>
+<h3>Ajustes</h3>
+<p>
+A formulação é ajustada para alcançar
+textura e características adequadas.
+</p>
+</div>
+<div class="step">
+<div class="number">4</div>
+<h3>Embalagem</h3>
+<p>
+O produto é acondicionado em uma embalagem
+considerando a redução de resíduos.
+</p>
+</div>
+</div>
+</section>
+<section class="contact">
+<div class="contact-content">
+<h2 class="title">Faça parte da mudança</h2>
+<p>
+Pequenas escolhas podem contribuir para
+um futuro mais consciente.
+</p>
+<a href="mailto:contato@aurea.com" class="button">
+Entre em contato
+</a>
+</div>
+</section>
+<footer>
+<p>© 2026 ÁUREA — Beleza que transforma.</p>
+<p>Projeto acadêmico.</p>
+</footer>
+</body>
+</html>
