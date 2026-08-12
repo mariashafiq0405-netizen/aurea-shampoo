@@ -29,10 +29,6 @@ body {
     color: #17281d;
 }
 
-/* =====================================================
-   CORES
-===================================================== */
-
 :root {
     --verde: #123524;
     --verde-2: #1d4a32;
@@ -149,6 +145,7 @@ nav a:hover {
 
 .hero::before {
     content: "🌿";
+
     position: absolute;
 
     font-size: 130px;
@@ -163,6 +160,7 @@ nav a:hover {
 
 .hero::after {
     content: "🌿";
+
     position: absolute;
 
     font-size: 90px;
@@ -301,8 +299,6 @@ nav a:hover {
     top: 70px;
 
     left: 105px;
-
-    filter: saturate(.7);
 }
 
 .nature-art::after {
@@ -371,24 +367,24 @@ section {
 }
 
 /* =====================================================
-   PRODUTOS
+   PRODUTO
 ===================================================== */
 
 .products {
-    display: grid;
+    display: flex;
 
-    grid-template-columns:
-    repeat(auto-fit, minmax(220px,1fr));
-
-    gap: 25px;
+    justify-content: center;
 }
 
 .product {
+    width: 100%;
+    max-width: 430px;
+
     background: var(--branco);
 
     border-radius: 25px;
 
-    padding: 25px;
+    padding: 30px;
 
     text-align: center;
 
@@ -409,13 +405,13 @@ section {
 
     position: absolute;
 
-    font-size: 50px;
+    font-size: 60px;
 
     opacity: .08;
 
-    right: -5px;
+    right: 10px;
 
-    top: -5px;
+    top: 5px;
 }
 
 .product:hover {
@@ -425,7 +421,7 @@ section {
 }
 
 .product-icon {
-    height: 190px;
+    height: 230px;
 
     border-radius: 20px;
 
@@ -442,7 +438,7 @@ section {
 
     justify-content: center;
 
-    font-size: 85px;
+    font-size: 100px;
 
     margin-bottom: 20px;
 
@@ -452,7 +448,7 @@ section {
 .product h3 {
     color: var(--verde);
 
-    font-size: 22px;
+    font-size: 27px;
 
     margin-bottom: 10px;
 }
@@ -460,25 +456,25 @@ section {
 .product p {
     color: #69736a;
 
-    line-height: 1.5;
+    line-height: 1.6;
 
-    margin-bottom: 15px;
+    margin-bottom: 18px;
 }
 
 .price {
     color: var(--verde);
 
-    font-size: 25px;
+    font-size: 30px;
 
     font-weight: bold;
 
-    margin-bottom: 15px;
+    margin-bottom: 18px;
 }
 
 .add-button {
     width: 100%;
 
-    padding: 13px;
+    padding: 15px;
 
     border: none;
 
@@ -493,6 +489,8 @@ section {
     cursor: pointer;
 
     transition: .3s;
+
+    font-size: 16px;
 }
 
 .add-button:hover {
@@ -1047,7 +1045,7 @@ footer h2 {
         </a>
 
         <a href="#produtos">
-            Produtos
+            Shampoo
         </a>
 
         <a href="#sustentabilidade">
@@ -1115,7 +1113,7 @@ footer h2 {
                 href="#produtos"
                 class="button">
 
-                Conheça a linha
+                Conheça o shampoo
 
             </a>
 
@@ -1133,10 +1131,7 @@ footer h2 {
     </div>
 
 
-    <!--
-       ILUSTRAÇÃO DE NATUREZA.
-       NÃO É UMA IMAGEM DE SHAMPOO.
-    -->
+    <!-- ILUSTRAÇÃO DE NATUREZA -->
 
     <div class="nature-art">
 
@@ -1179,29 +1174,28 @@ footer h2 {
 
 
 <!-- =====================================================
-     PRODUTOS
+     SHAMPOO
 ===================================================== -->
 
 <section id="produtos">
 
 
     <h2 class="section-title">
-        Linha ÁUREA
+        Shampoo ÁUREA
     </h2>
 
 
     <p class="section-subtitle">
 
-        Escolha seus produtos favoritos e
-        monte seu pedido no carrinho.
+        Conheça nosso principal produto:
+        um shampoo inspirado na ideia de
+        beleza consciente e sustentabilidade.
 
     </p>
 
 
     <div class="products">
 
-
-        <!-- SHAMPOO -->
 
         <div class="product">
 
@@ -1217,15 +1211,16 @@ footer h2 {
 
             <p>
 
-                O produto principal da nossa marca,
-                inspirado na ideia de beleza
-                consciente.
+                Nosso produto principal.
+                Uma proposta de cuidado com
+                os cabelos aliada à consciência
+                ambiental.
 
             </p>
 
 
             <div class="price">
-                R$ 29,90
+                R$ 4,99
             </div>
 
 
@@ -1233,130 +1228,7 @@ footer h2 {
                 class="add-button"
                 onclick="addToCart(
                     'Shampoo ÁUREA',
-                    29.90
-                )">
-
-                🛒 Adicionar ao carrinho
-
-            </button>
-
-        </div>
-
-
-        <!-- CONDICIONADOR -->
-
-        <div class="product">
-
-            <div class="product-icon">
-                🍃
-            </div>
-
-
-            <h3>
-                Condicionador ÁUREA
-            </h3>
-
-
-            <p>
-
-                Complemento ideal para uma
-                rotina completa de cuidados.
-
-            </p>
-
-
-            <div class="price">
-                R$ 32,90
-            </div>
-
-
-            <button
-                class="add-button"
-                onclick="addToCart(
-                    'Condicionador ÁUREA',
-                    32.90
-                )">
-
-                🛒 Adicionar ao carrinho
-
-            </button>
-
-        </div>
-
-
-        <!-- KIT -->
-
-        <div class="product">
-
-            <div class="product-icon">
-                🌱
-            </div>
-
-
-            <h3>
-                Kit ÁUREA
-            </h3>
-
-
-            <p>
-
-                Shampoo + condicionador
-                para uma experiência completa.
-
-            </p>
-
-
-            <div class="price">
-                R$ 55,90
-            </div>
-
-
-            <button
-                class="add-button"
-                onclick="addToCart(
-                    'Kit ÁUREA',
-                    55.90
-                )">
-
-                🛒 Adicionar ao carrinho
-
-            </button>
-
-        </div>
-
-
-        <!-- REFIL -->
-
-        <div class="product">
-
-            <div class="product-icon">
-                ♻️
-            </div>
-
-
-            <h3>
-                Eco Refill
-            </h3>
-
-
-            <p>
-
-                Uma proposta para reduzir
-                o desperdício de embalagens.
-
-            </p>
-
-
-            <div class="price">
-                R$ 24,90
-            </div>
-
-
-            <button
-                class="add-button"
-                onclick="addToCart(
-                    'Eco Refill',
-                    24.90
+                    4.99
                 )">
 
                 🛒 Adicionar ao carrinho
@@ -1432,8 +1304,8 @@ footer h2 {
             </h3>
 
             <p>
-                Incentivamos a redução
-                do desperdício.
+                Incentivamos escolhas
+                que diminuam o desperdício.
             </p>
 
         </div>
@@ -1647,7 +1519,7 @@ footer h2 {
         <details>
 
             <summary>
-                O site realmente vende os produtos?
+                O site realmente vende o shampoo?
             </summary>
 
             <p>
@@ -1664,14 +1536,12 @@ footer h2 {
         <details>
 
             <summary>
-                O que é o Eco Refill?
+                Quanto custa o shampoo?
             </summary>
 
             <p>
 
-                É o conceito de refil da ÁUREA,
-                pensado para diminuir o uso de
-                embalagens descartáveis.
+                O Shampoo ÁUREA custa R$ 4,99.
 
             </p>
 
