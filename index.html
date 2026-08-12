@@ -3,442 +3,2227 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ÁUREA | Beleza que transforma</title>
+
+<title>ÁUREA | Beleza que cuida do futuro</title>
+
 <style>
+
+/* =====================================================
+   ÁUREA — IDENTIDADE VISUAL
+   Verde escuro + dourado + natureza
+===================================================== */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html {
     scroll-behavior: smooth;
 }
+
 body {
-    font-family: Arial, sans-serif;
-    background: #f7f5ed;
-    color: #26352b;
-    line-height: 1.6;
+    background: #f5f1e5;
+    color: #17281d;
 }
-/* MENU */
+
+/* =====================================================
+   CORES
+===================================================== */
+
+:root {
+    --verde: #123524;
+    --verde-2: #1d4a32;
+    --verde-3: #2f6244;
+    --dourado: #c7a34a;
+    --dourado-claro: #e4c96e;
+    --creme: #f5f1e5;
+    --branco: #fffdf7;
+}
+
+/* =====================================================
+   HEADER
+===================================================== */
+
 header {
     position: sticky;
     top: 0;
-    z-index: 100;
-    background: rgba(247,245,237,0.96);
-    border-bottom: 1px solid #dfe4dc;
-}
-nav {
-    max-width: 1100px;
-    margin: auto;
-    padding: 18px 25px;
+    z-index: 1000;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    padding: 15px 7%;
+
+    background: rgba(18,53,36,0.97);
+
+    border-bottom: 2px solid var(--dourado);
 }
+
 .logo {
-    font-size: 26px;
+    color: var(--dourado-claro);
+
+    font-size: 28px;
     font-weight: bold;
-    letter-spacing: 4px;
+
+    letter-spacing: 7px;
 }
-nav ul {
-    list-style: none;
+
+nav {
     display: flex;
-    gap: 22px;
-}
-nav a {
-    text-decoration: none;
-    color: #26352b;
-    font-weight: bold;
-}
-/* INÍCIO */
-.hero {
-    min-height: 90vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 50px 25px;
-    background: linear-gradient(135deg,#dfe9d9,#f7f5ed);
-}
-.hero-content {
-    max-width: 800px;
-}
-.hero h1 {
-    font-size: clamp(55px,12vw,110px);
-    letter-spacing: 12px;
-}
-.hero h2 {
-    font-size: 25px;
-    font-weight: normal;
-    margin: 10px 0 25px;
-}
-.hero p {
-    font-size: 18px;
-    max-width: 600px;
-    margin: auto;
-}
-.button {
-    display: inline-block;
-    margin-top: 30px;
-    padding: 14px 30px;
-    background: #4f6b53;
-    color: white;
-    text-decoration: none;
-    border-radius: 30px;
-    font-weight: bold;
-}
-/* SEÇÕES */
-section {
-    max-width: 1100px;
-    margin: auto;
-    padding: 85px 25px;
-}
-.title {
-    text-align: center;
-    font-size: 36px;
-    margin-bottom: 15px;
-}
-.subtitle {
-    text-align: center;
-    max-width: 650px;
-    margin: 0 auto 45px;
-    color: #667268;
-}
-/* SOBRE */
-.about {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
     gap: 25px;
 }
-.box {
-    background: white;
-    padding: 35px;
-    border-radius: 20px;
-    box-shadow: 0 8px 25px rgba(0,0,0,.06);
+
+nav a {
+    color: #fffdf7;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    transition: .3s;
 }
-.box h3 {
-    font-size: 24px;
-    margin-bottom: 12px;
+
+nav a:hover {
+    color: var(--dourado-claro);
 }
-/* PRODUTO */
-    .jpeg {
-    max-width: none;
-    background: #dfe9d9;
+
+.cart-button {
+    border: 1px solid var(--dourado);
+
+    background: var(--dourado);
+
+    color: var(--verde);
+
+    padding: 10px 17px;
+
+    border-radius: 30px;
+
+    cursor: pointer;
+
+    font-weight: bold;
 }
-.product-content {
-    max-width: 1100px;
-    margin: auto;
-    padding: 0 25px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    align-items: center;
+
+#cart-count {
+    background: var(--verde);
+
+    color: white;
+
+    border-radius: 50%;
+
+    padding: 2px 7px;
+
+    margin-left: 5px;
 }
-.bottle {
-    width: 210px;
-    height: 350px;
-    margin: auto;
-    background: #f7f5ed;
-    border-radius: 30px 30px 45px 45px;
-    box-shadow: 15px 20px 40px rgba(0,0,0,.15);
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero {
+    min-height: 88vh;
+
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: space-between;
+
+    gap: 50px;
+
+    padding: 80px 8%;
+
     position: relative;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 85% 30%,
+            rgba(199,163,74,.25),
+            transparent 30%
+        ),
+        var(--verde);
 }
-.bottle:before {
-    content: "";
+
+.hero::before {
+    content: "🌿";
     position: absolute;
-    top: -55px;
-    width: 80px;
-    height: 60px;
-    background: #4f6b53;
-    border-radius: 10px 10px 5px 5px;
+
+    font-size: 130px;
+
+    opacity: .12;
+
+    right: 5%;
+    top: 5%;
+
+    transform: rotate(15deg);
 }
-.label {
-    text-align: center;
-    border-top: 1px solid #718b72;
-    border-bottom: 1px solid #718b72;
-    padding: 25px 10px;
-    width: 80%;
+
+.hero::after {
+    content: "🌿";
+    position: absolute;
+
+    font-size: 90px;
+
+    opacity: .10;
+
+    left: 4%;
+    bottom: 3%;
+
+    transform: rotate(-25deg);
 }
-.label h3 {
-    letter-spacing: 4px;
+
+.hero-text {
+    max-width: 650px;
+
+    position: relative;
+
+    z-index: 2;
 }
-.product-info h2 {
-    font-size: 40px;
+
+.hero h1 {
+    color: var(--dourado-claro);
+
+    font-size: clamp(55px, 11vw, 100px);
+
+    letter-spacing: 12px;
+
+    margin-bottom: 10px;
+}
+
+.hero h2 {
+    color: white;
+
+    font-size: 27px;
+
     margin-bottom: 20px;
 }
-.product-info ul {
-    margin: 20px 0;
-    padding-left: 20px;
+
+.hero p {
+    color: #e8e4d8;
+
+    font-size: 18px;
+
+    line-height: 1.8;
+
+    max-width: 600px;
 }
-.product-info li {
-    margin-bottom: 8px;
+
+.hero-buttons {
+    display: flex;
+
+    gap: 15px;
+
+    margin-top: 30px;
+
+    flex-wrap: wrap;
 }
-/* SUSTENTABILIDADE */
-.cards {
+
+.button {
+    background: var(--dourado);
+
+    color: var(--verde);
+
+    border: 1px solid var(--dourado);
+
+    padding: 14px 25px;
+
+    border-radius: 30px;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+.button:hover {
+    background: var(--dourado-claro);
+
+    transform: translateY(-3px);
+}
+
+.button.secondary {
+    background: transparent;
+
+    color: var(--dourado-claro);
+
+    border: 1px solid var(--dourado);
+}
+
+/* =====================================================
+   ILUSTRAÇÃO DE NATUREZA
+===================================================== */
+
+.nature-art {
+    width: 390px;
+    height: 390px;
+
+    max-width: 90vw;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            145deg,
+            #2f6244,
+            #0c291b
+        );
+
+    border: 5px solid var(--dourado);
+
+    box-shadow:
+        0 0 0 12px rgba(199,163,74,.12),
+        0 25px 60px rgba(0,0,0,.3);
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+.nature-art::before {
+    content: "🌿";
+
+    position: absolute;
+
+    font-size: 150px;
+
+    top: 70px;
+
+    left: 105px;
+
+    filter: saturate(.7);
+}
+
+.nature-art::after {
+    content: "🌱";
+
+    position: absolute;
+
+    font-size: 90px;
+
+    bottom: 50px;
+
+    right: 65px;
+}
+
+.sun {
+    position: absolute;
+
+    width: 75px;
+    height: 75px;
+
+    border-radius: 50%;
+
+    background: var(--dourado-claro);
+
+    top: 55px;
+    right: 60px;
+
+    box-shadow:
+        0 0 40px rgba(228,201,110,.5);
+}
+
+/* =====================================================
+   SEÇÕES
+===================================================== */
+
+section {
+    padding: 85px 8%;
+}
+
+.section-title {
+    text-align: center;
+
+    color: var(--verde);
+
+    font-size: 40px;
+
+    margin-bottom: 15px;
+}
+
+.section-title::after {
+    content: " ✦ ";
+
+    color: var(--dourado);
+}
+
+.section-subtitle {
+    text-align: center;
+
+    max-width: 720px;
+
+    margin: auto auto 45px;
+
+    line-height: 1.8;
+
+    color: #526056;
+}
+
+/* =====================================================
+   PRODUTOS
+===================================================== */
+
+.products {
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+
+    grid-template-columns:
+    repeat(auto-fit, minmax(220px,1fr));
+
     gap: 25px;
 }
-.card {
-    background: white;
-    padding: 30px;
+
+.product {
+    background: var(--branco);
+
+    border-radius: 25px;
+
+    padding: 25px;
+
     text-align: center;
+
+    border: 1px solid rgba(199,163,74,.45);
+
+    box-shadow:
+        0 12px 35px rgba(18,53,36,.09);
+
+    transition: .3s;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.product::before {
+    content: "🌿";
+
+    position: absolute;
+
+    font-size: 50px;
+
+    opacity: .08;
+
+    right: -5px;
+
+    top: -5px;
+}
+
+.product:hover {
+    transform: translateY(-8px);
+
+    border-color: var(--dourado);
+}
+
+.product-icon {
+    height: 190px;
+
     border-radius: 20px;
-    box-shadow: 0 8px 25px rgba(0,0,0,.05);
+
+    background:
+        linear-gradient(
+            145deg,
+            #dce8d8,
+            #f2ead0
+        );
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 85px;
+
+    margin-bottom: 20px;
+
+    border: 1px solid rgba(199,163,74,.3);
 }
-.icon {
+
+.product h3 {
+    color: var(--verde);
+
+    font-size: 22px;
+
+    margin-bottom: 10px;
+}
+
+.product p {
+    color: #69736a;
+
+    line-height: 1.5;
+
+    margin-bottom: 15px;
+}
+
+.price {
+    color: var(--verde);
+
+    font-size: 25px;
+
+    font-weight: bold;
+
+    margin-bottom: 15px;
+}
+
+.add-button {
+    width: 100%;
+
+    padding: 13px;
+
+    border: none;
+
+    border-radius: 25px;
+
+    background: var(--verde);
+
+    color: var(--dourado-claro);
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+.add-button:hover {
+    background: var(--verde-2);
+}
+
+/* =====================================================
+   MENSAGEM DO PLANETA
+===================================================== */
+
+.planet-message {
+    background: var(--verde);
+
+    color: white;
+
+    text-align: center;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.planet-message h2 {
+    color: var(--dourado-claro);
+
+    font-size: 40px;
+
+    margin-bottom: 20px;
+}
+
+.planet-message p {
+    max-width: 750px;
+
+    margin: auto;
+
+    line-height: 1.8;
+
+    color: #e9e5da;
+
+    font-size: 18px;
+}
+
+.leaves {
     font-size: 45px;
-    margin-bottom: 12px;
+
+    margin-top: 30px;
+
+    letter-spacing: 15px;
 }
-/* PROCESSO */
-.steps {
+
+/* =====================================================
+   SUSTENTABILIDADE
+===================================================== */
+
+.sustainability {
+    background:
+        linear-gradient(
+            180deg,
+            #e1eadc,
+            #f5f1e5
+        );
+}
+
+.sustainability-grid {
     display: grid;
-    grid-template-columns: repeat(4,1fr);
+
+    grid-template-columns:
+    repeat(auto-fit, minmax(210px,1fr));
+
+    gap: 25px;
+}
+
+.sustainability-card {
+    background: rgba(255,255,255,.8);
+
+    padding: 30px;
+
+    border-radius: 25px;
+
+    text-align: center;
+
+    border-top: 4px solid var(--dourado);
+
+    box-shadow:
+        0 8px 25px rgba(18,53,36,.07);
+}
+
+.sustainability-card .emoji {
+    font-size: 50px;
+
+    margin-bottom: 15px;
+}
+
+.sustainability-card h3 {
+    color: var(--verde);
+
+    margin-bottom: 10px;
+}
+
+/* =====================================================
+   SOBRE
+===================================================== */
+
+.about-box {
+    max-width: 900px;
+
+    margin: auto;
+
+    background: white;
+
+    padding: 45px;
+
+    border-radius: 30px;
+
+    border: 1px solid rgba(199,163,74,.5);
+
+    box-shadow:
+        0 12px 35px rgba(18,53,36,.08);
+
+    line-height: 1.9;
+
+    text-align: center;
+}
+
+.about-box p {
+    margin-bottom: 10px;
+}
+
+/* =====================================================
+   BENEFÍCIOS
+===================================================== */
+
+.benefits {
+    display: grid;
+
+    grid-template-columns:
+    repeat(auto-fit, minmax(200px,1fr));
+
     gap: 20px;
 }
-.step {
+
+.benefit {
+    background: white;
+
+    padding: 28px;
+
+    border-radius: 20px;
+
     text-align: center;
-    padding: 20px;
+
+    border: 1px solid #ddd4b9;
 }
-.number {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background: #4f6b53;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto 15px;
+
+.benefit span {
+    display: block;
+
+    font-size: 40px;
+
+    margin-bottom: 10px;
+}
+
+.benefit h3 {
+    color: var(--verde);
+
+    margin-bottom: 10px;
+}
+
+/* =====================================================
+   FAQ
+===================================================== */
+
+.faq {
+    max-width: 800px;
+
+    margin: auto;
+}
+
+details {
+    background: white;
+
+    margin-bottom: 12px;
+
+    padding: 20px;
+
+    border-radius: 15px;
+
+    border-left: 4px solid var(--dourado);
+
+    cursor: pointer;
+}
+
+summary {
+    color: var(--verde);
+
     font-weight: bold;
 }
-/* CONTATO */
-.contact {
-    max-width: none;
-    background: #26352b;
-    color: white;
-    text-align: center;
+
+details p {
+    margin-top: 15px;
+
+    line-height: 1.7;
 }
-.contact-content {
-    max-width: 700px;
-    margin: auto;
-    padding: 0 25px;
-}
-.contact .button {
-    background: white;
-    color: #26352b;
-}
-/* RODAPÉ */
-footer {
-    background: #18231b;
-    color: #ccd4cd;
-    text-align: center;
+
+/* =====================================================
+   CARRINHO
+===================================================== */
+
+.cart {
+    position: fixed;
+
+    top: 0;
+
+    right: -430px;
+
+    width: 410px;
+
+    max-width: 92%;
+
+    height: 100vh;
+
+    background: #fffdf7;
+
+    z-index: 3000;
+
     padding: 25px;
-    font-size: 14px;
+
+    box-shadow:
+        -10px 0 35px rgba(0,0,0,.25);
+
+    transition: .4s;
+
+    overflow-y: auto;
 }
-/* CELULAR */
+
+.cart.active {
+    right: 0;
+}
+
+.cart-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding-bottom: 15px;
+
+    border-bottom: 2px solid var(--dourado);
+}
+
+.cart-header h2 {
+    color: var(--verde);
+}
+
+.close-cart {
+    border: none;
+
+    background: none;
+
+    font-size: 30px;
+
+    cursor: pointer;
+
+    color: var(--verde);
+}
+
+.cart-item {
+    border-bottom: 1px solid #ddd;
+
+    padding: 17px 0;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 10px;
+}
+
+.cart-item strong {
+    color: var(--verde);
+}
+
+.quantity {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+}
+
+.quantity button {
+    width: 28px;
+    height: 28px;
+
+    border: 1px solid var(--dourado);
+
+    border-radius: 50%;
+
+    background: #f4ecd4;
+
+    color: var(--verde);
+
+    cursor: pointer;
+}
+
+.remove {
+    border: none;
+
+    background: none;
+
+    color: #9a4c42;
+
+    cursor: pointer;
+
+    margin-top: 8px;
+}
+
+.cart-total {
+    font-size: 24px;
+
+    font-weight: bold;
+
+    color: var(--verde);
+
+    margin: 25px 0;
+}
+
+.coupon {
+    display: flex;
+
+    gap: 8px;
+
+    margin-bottom: 20px;
+}
+
+.coupon input {
+    flex: 1;
+
+    padding: 12px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 20px;
+
+    outline: none;
+}
+
+.coupon button {
+    border: none;
+
+    background: var(--dourado);
+
+    color: var(--verde);
+
+    padding: 10px 15px;
+
+    border-radius: 20px;
+
+    cursor: pointer;
+
+    font-weight: bold;
+}
+
+.checkout {
+    width: 100%;
+
+    padding: 15px;
+
+    border: 1px solid var(--dourado);
+
+    background: var(--verde);
+
+    color: var(--dourado-claro);
+
+    border-radius: 25px;
+
+    font-weight: bold;
+
+    font-size: 16px;
+
+    cursor: pointer;
+}
+
+/* =====================================================
+   CRIADORES
+===================================================== */
+
+.creators {
+    background: var(--verde);
+
+    color: white;
+
+    text-align: center;
+
+    border-top: 3px solid var(--dourado);
+}
+
+.creators h2 {
+    color: var(--dourado-claro);
+
+    font-size: 34px;
+
+    margin-bottom: 30px;
+}
+
+.creator-list {
+    max-width: 750px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+    repeat(auto-fit, minmax(180px,1fr));
+
+    gap: 12px;
+}
+
+.creator {
+    background: rgba(255,255,255,.08);
+
+    border: 1px solid rgba(228,201,110,.35);
+
+    padding: 14px;
+
+    border-radius: 15px;
+
+    color: #f7f1df;
+}
+
+.contact {
+    margin-top: 35px;
+
+    padding-top: 25px;
+
+    border-top: 1px solid rgba(228,201,110,.4);
+}
+
+.contact strong {
+    color: var(--dourado-claro);
+}
+
+.contact a {
+    color: white;
+
+    text-decoration: none;
+
+    display: inline-block;
+
+    margin-top: 8px;
+}
+
+.contact a:hover {
+    color: var(--dourado-claro);
+}
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer {
+    background: #08170e;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 35px 20px;
+}
+
+footer h2 {
+    color: var(--dourado-claro);
+
+    letter-spacing: 7px;
+
+    margin-bottom: 10px;
+}
+
+/* =====================================================
+   RESPONSIVO
+===================================================== */
+
 @media(max-width:750px) {
+
     nav {
+        display: none;
+    }
+
+    .hero {
         flex-direction: column;
-        gap: 15px;
+
+        text-align: center;
+
+        padding-top: 55px;
     }
-    nav ul {
+
+    .hero p {
+        margin: auto;
+    }
+
+    .hero-buttons {
         justify-content: center;
-        flex-wrap: wrap;
-        gap: 12px;
     }
-    .about,
-    .product-content {
-        grid-template-columns: 1fr;
+
+    .nature-art {
+        width: 300px;
+        height: 300px;
     }
-    .cards {
-        grid-template-columns: 1fr;
+
+    .nature-art::before {
+        font-size: 110px;
+
+        left: 80px;
     }
-    .steps {
-        grid-template-columns: 1fr 1fr;
+
+    section {
+        padding: 65px 5%;
     }
-    .hero h1 {
-        letter-spacing: 6px;
+
+    .section-title {
+        font-size: 32px;
     }
+
+    .about-box {
+        padding: 30px 20px;
+    }
+
 }
+
 </style>
 </head>
+
+
 <body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
 <header>
-<nav>
-<div class="logo">ÁUREA</div>
-<ul>
-<li><a href="#sobre">Sobre</a></li>
-<li><a href="#produto">Produto</a></li>
-<li><a href="#sustentabilidade">Sustentabilidade</a></li>
-<li><a href="#processo">Produção</a></li>
-</ul>
-</nav>
+
+    <div class="logo">
+        ÁUREA
+    </div>
+
+
+    <nav>
+
+        <a href="#inicio">
+            Início
+        </a>
+
+        <a href="#produtos">
+            Produtos
+        </a>
+
+        <a href="#sustentabilidade">
+            Sustentabilidade
+        </a>
+
+        <a href="#sobre">
+            Sobre
+        </a>
+
+    </nav>
+
+
+    <button
+        class="cart-button"
+        onclick="openCart()">
+
+        🛒 Carrinho
+
+        <span id="cart-count">
+            0
+        </span>
+
+    </button>
+
 </header>
-<section class="hero">
-<div class="hero-content">
-<h1>ÁUREA</h1>
-<h2>Beleza que transforma.</h2>
-<p>
-Cosméticos sustentáveis desenvolvidos para cuidar
-dos cabelos enquanto respeitam o planeta.
-</p>
-<a href="#produto" class="button">
-Conheça nosso produto
-</a>
-</div>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section
+    class="hero"
+    id="inicio">
+
+
+    <div class="hero-text">
+
+        <h1>
+            ÁUREA
+        </h1>
+
+
+        <h2>
+            Beleza que cuida do futuro.
+        </h2>
+
+
+        <p>
+
+            Cuidar dos cabelos é importante.
+            Cuidar do mundo também.
+
+            A ÁUREA une autocuidado,
+            sustentabilidade e consciência
+            em uma nova experiência de beleza.
+
+        </p>
+
+
+        <div class="hero-buttons">
+
+            <a
+                href="#produtos"
+                class="button">
+
+                Conheça a linha
+
+            </a>
+
+
+            <a
+                href="#sustentabilidade"
+                class="button secondary">
+
+                Nossa missão
+
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!--
+       ILUSTRAÇÃO DE NATUREZA.
+       NÃO É UMA IMAGEM DE SHAMPOO.
+    -->
+
+    <div class="nature-art">
+
+        <div class="sun"></div>
+
+    </div>
+
 </section>
+
+
+<!-- =====================================================
+     MENSAGEM
+===================================================== -->
+
+<section class="planet-message">
+
+    <h2>
+        Um mundo melhor começa nas escolhas.
+    </h2>
+
+
+    <p>
+
+        Imagine um mundo onde beleza e natureza
+        não precisam competir.
+
+        Onde cada produto é pensado para cuidar
+        das pessoas sem esquecer do planeta.
+
+        É esse futuro que a ÁUREA quer representar.
+
+    </p>
+
+
+    <div class="leaves">
+        🌿 🌱 🍃 🌿
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PRODUTOS
+===================================================== -->
+
+<section id="produtos">
+
+
+    <h2 class="section-title">
+        Linha ÁUREA
+    </h2>
+
+
+    <p class="section-subtitle">
+
+        Escolha seus produtos favoritos e
+        monte seu pedido no carrinho.
+
+    </p>
+
+
+    <div class="products">
+
+
+        <!-- SHAMPOO -->
+
+        <div class="product">
+
+            <div class="product-icon">
+                🌿
+            </div>
+
+
+            <h3>
+                Shampoo ÁUREA
+            </h3>
+
+
+            <p>
+
+                O produto principal da nossa marca,
+                inspirado na ideia de beleza
+                consciente.
+
+            </p>
+
+
+            <div class="price">
+                R$ 29,90
+            </div>
+
+
+            <button
+                class="add-button"
+                onclick="addToCart(
+                    'Shampoo ÁUREA',
+                    29.90
+                )">
+
+                🛒 Adicionar ao carrinho
+
+            </button>
+
+        </div>
+
+
+        <!-- CONDICIONADOR -->
+
+        <div class="product">
+
+            <div class="product-icon">
+                🍃
+            </div>
+
+
+            <h3>
+                Condicionador ÁUREA
+            </h3>
+
+
+            <p>
+
+                Complemento ideal para uma
+                rotina completa de cuidados.
+
+            </p>
+
+
+            <div class="price">
+                R$ 32,90
+            </div>
+
+
+            <button
+                class="add-button"
+                onclick="addToCart(
+                    'Condicionador ÁUREA',
+                    32.90
+                )">
+
+                🛒 Adicionar ao carrinho
+
+            </button>
+
+        </div>
+
+
+        <!-- KIT -->
+
+        <div class="product">
+
+            <div class="product-icon">
+                🌱
+            </div>
+
+
+            <h3>
+                Kit ÁUREA
+            </h3>
+
+
+            <p>
+
+                Shampoo + condicionador
+                para uma experiência completa.
+
+            </p>
+
+
+            <div class="price">
+                R$ 55,90
+            </div>
+
+
+            <button
+                class="add-button"
+                onclick="addToCart(
+                    'Kit ÁUREA',
+                    55.90
+                )">
+
+                🛒 Adicionar ao carrinho
+
+            </button>
+
+        </div>
+
+
+        <!-- REFIL -->
+
+        <div class="product">
+
+            <div class="product-icon">
+                ♻️
+            </div>
+
+
+            <h3>
+                Eco Refill
+            </h3>
+
+
+            <p>
+
+                Uma proposta para reduzir
+                o desperdício de embalagens.
+
+            </p>
+
+
+            <div class="price">
+                R$ 24,90
+            </div>
+
+
+            <button
+                class="add-button"
+                onclick="addToCart(
+                    'Eco Refill',
+                    24.90
+                )">
+
+                🛒 Adicionar ao carrinho
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     BENEFÍCIOS
+===================================================== -->
+
+<section>
+
+
+    <h2 class="section-title">
+        Por que ÁUREA?
+    </h2>
+
+
+    <div class="benefits">
+
+
+        <div class="benefit">
+
+            <span>
+                🌿
+            </span>
+
+            <h3>
+                Natureza
+            </h3>
+
+            <p>
+                Inspirada em um futuro
+                mais conectado ao meio ambiente.
+            </p>
+
+        </div>
+
+
+        <div class="benefit">
+
+            <span>
+                💧
+            </span>
+
+            <h3>
+                Cuidado
+            </h3>
+
+            <p>
+                Uma proposta de autocuidado
+                mais consciente.
+            </p>
+
+        </div>
+
+
+        <div class="benefit">
+
+            <span>
+                ♻️
+            </span>
+
+            <h3>
+                Sustentabilidade
+            </h3>
+
+            <p>
+                Incentivamos a redução
+                do desperdício.
+            </p>
+
+        </div>
+
+
+        <div class="benefit">
+
+            <span>
+                ✨
+            </span>
+
+            <h3>
+                Inovação
+            </h3>
+
+            <p>
+                Beleza, criatividade e
+                responsabilidade juntas.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     SUSTENTABILIDADE
+===================================================== -->
+
+<section
+    class="sustainability"
+    id="sustentabilidade">
+
+
+    <h2 class="section-title">
+        Sustentabilidade
+    </h2>
+
+
+    <p class="section-subtitle">
+
+        A ÁUREA representa uma ideia simples:
+        quanto mais conscientes forem nossas
+        escolhas, melhor pode ser o futuro.
+
+    </p>
+
+
+    <div class="sustainability-grid">
+
+
+        <div class="sustainability-card">
+
+            <div class="emoji">
+                🌎
+            </div>
+
+            <h3>
+                Um planeta saudável
+            </h3>
+
+            <p>
+                A natureza precisa ser preservada
+                para continuar existindo para as
+                próximas gerações.
+            </p>
+
+        </div>
+
+
+        <div class="sustainability-card">
+
+            <div class="emoji">
+                🌱
+            </div>
+
+            <h3>
+                Mais verde
+            </h3>
+
+            <p>
+                Florestas, plantas e áreas verdes
+                são fundamentais para o equilíbrio
+                ambiental.
+            </p>
+
+        </div>
+
+
+        <div class="sustainability-card">
+
+            <div class="emoji">
+                ♻️
+            </div>
+
+            <h3>
+                Menos desperdício
+            </h3>
+
+            <p>
+                Repensar o consumo é uma das formas
+                de diminuir a quantidade de resíduos.
+            </p>
+
+        </div>
+
+
+        <div class="sustainability-card">
+
+            <div class="emoji">
+                💚
+            </div>
+
+            <h3>
+                Futuro
+            </h3>
+
+            <p>
+                A sustentabilidade não é apenas uma
+                tendência: é uma responsabilidade.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     SOBRE
+===================================================== -->
+
 <section id="sobre">
-<h2 class="title">Sobre a ÁUREA</h2>
-<p class="subtitle">
-Uma proposta de beleza consciente que une cuidado,
-inovação e responsabilidade ambiental.
-</p>
-<div class="about">
-<div class="box">
-<h3>Nossa missão</h3>
-<p>
-Criar produtos de higiene e beleza que proporcionem
-cuidado aos consumidores sem deixar de considerar
-os impactos causados ao meio ambiente.
-</p>
-</div>
-<div class="box">
-<h3>Nosso propósito</h3>
-<p>
-Incentivar escolhas mais conscientes através de
-alternativas sustentáveis aos produtos tradicionais,
-mostrando que cuidar de si também pode significar
-cuidar do planeta.
-</p>
-</div>
-</div>
+
+
+    <div class="about-box">
+
+        <h2 class="section-title">
+            Sobre a ÁUREA
+        </h2>
+
+
+        <p>
+
+            A ÁUREA é uma proposta de marca
+            sustentável criada para mostrar que
+            beleza e responsabilidade ambiental
+            podem caminhar juntas.
+
+        </p>
+
+
+        <p>
+
+            Nosso principal produto é um shampoo
+            pensado dentro de uma proposta de
+            consumo mais consciente.
+
+        </p>
+
+
+        <p>
+
+            A marca busca transformar uma escolha
+            cotidiana em uma oportunidade de refletir
+            sobre o impacto que causamos no planeta.
+
+        </p>
+
+    </div>
+
 </section>
-<section class="product" id="produto">
-<div class="product-content">
-<div class="bottle">
-<div class="label">
-<h3>ÁUREA</h3>
-<p>
-SHAMPOO<br>
-SUSTENTÁVEL
-</p>
-</div>
-</div>
-<div class="product-info">
-<h2>Nosso Shampoo</h2>
-<p>
-Um shampoo pensado para unir limpeza,
-cuidado capilar e responsabilidade ambiental.
-</p>
-<ul>
-<li>Ingredientes de origem vegetal</li>
-<li>Formulação suave para os cabelos</li>
-<li>Menor impacto ambiental</li>
-<li>Embalagem pensada para reduzir resíduos</li>
-<li>Alternativa mais consciente aos produtos convencionais</li>
-</ul>
-<a href="#sustentabilidade" class="button">
-Conheça nossa proposta
-</a>
-</div>
-</div>
+
+
+<!-- =====================================================
+     FAQ
+===================================================== -->
+
+<section>
+
+
+    <h2 class="section-title">
+        Perguntas frequentes
+    </h2>
+
+
+    <div class="faq">
+
+
+        <details>
+
+            <summary>
+                O que significa ÁUREA?
+            </summary>
+
+            <p>
+
+                ÁUREA remete à ideia de algo precioso,
+                especial e valioso — conceito que combina
+                com a proposta de valorizar tanto o
+                autocuidado quanto a natureza.
+
+            </p>
+
+        </details>
+
+
+        <details>
+
+            <summary>
+                O site realmente vende os produtos?
+            </summary>
+
+            <p>
+
+                O carrinho e o checkout são uma
+                demonstração de uma loja virtual
+                para o projeto escolar.
+
+            </p>
+
+        </details>
+
+
+        <details>
+
+            <summary>
+                O que é o Eco Refill?
+            </summary>
+
+            <p>
+
+                É o conceito de refil da ÁUREA,
+                pensado para diminuir o uso de
+                embalagens descartáveis.
+
+            </p>
+
+        </details>
+
+
+        <details>
+
+            <summary>
+                Qual é a missão da ÁUREA?
+            </summary>
+
+            <p>
+
+                Incentivar uma relação mais consciente
+                entre beleza, consumo e meio ambiente.
+
+            </p>
+
+        </details>
+
+    </div>
+
 </section>
-<section id="sustentabilidade">
-<h2 class="title">Por que sustentável?</h2>
-<p class="subtitle">
-A sustentabilidade não é apenas sobre o produto.
-É sobre pensar em todo o ciclo de vida dele.
-</p>
-<div class="cards">
-<div class="card">
-<div class="icon">🌱</div>
-<h3>Meio ambiente</h3>
-<p>
-A proposta busca reduzir impactos ambientais
-através de escolhas mais responsáveis de
-ingredientes e embalagens.
-</p>
+
+
+<!-- =====================================================
+     CARRINHO
+===================================================== -->
+
+<div
+    class="cart"
+    id="cart">
+
+
+    <div class="cart-header">
+
+        <h2>
+            🛒 Seu carrinho
+        </h2>
+
+
+        <button
+            class="close-cart"
+            onclick="closeCart()">
+
+            ×
+
+        </button>
+
+    </div>
+
+
+    <div id="cart-items">
+
+        <p>
+            Seu carrinho está vazio.
+        </p>
+
+    </div>
+
+
+    <div class="cart-total">
+
+        Total:
+
+        R$
+
+        <span id="cart-total">
+            0,00
+        </span>
+
+    </div>
+
+
+    <div class="coupon">
+
+        <input
+            id="coupon"
+            placeholder="Cupom de desconto">
+
+
+        <button
+            onclick="applyCoupon()">
+
+            Aplicar
+
+        </button>
+
+    </div>
+
+
+    <button
+        class="checkout"
+        onclick="checkout()">
+
+        Finalizar pedido
+
+    </button>
+
 </div>
-<div class="card">
-<div class="icon">♻️</div>
-<h3>Menos resíduos</h3>
-<p>
-A utilização de materiais recicláveis ou
-reaproveitáveis contribui para diminuir
-a quantidade de resíduos descartados.
-</p>
-</div>
-<div class="card">
-<div class="icon">💚</div>
-<h3>Consumo consciente</h3>
-<p>
-A ÁUREA incentiva consumidores a refletirem
-sobre a origem, utilização e descarte
-dos produtos que compram.
-</p>
-</div>
-</div>
+
+
+<!-- =====================================================
+     CRIADORES
+===================================================== -->
+
+<section class="creators">
+
+
+    <h2>
+        Criadores da ÁUREA
+    </h2>
+
+
+    <div class="creator-list">
+
+
+        <div class="creator">
+            01 • Adryan
+        </div>
+
+
+        <div class="creator">
+            02 • Angelina
+        </div>
+
+
+        <div class="creator">
+            03 • Lucas
+        </div>
+
+
+        <div class="creator">
+            04 • Luiz Felipe
+        </div>
+
+
+        <div class="creator">
+            05 • Maria Clara
+        </div>
+
+
+        <div class="creator">
+            06 • Mateus
+        </div>
+
+
+        <div class="creator">
+            07 • Nathallya
+        </div>
+
+
+        <div class="creator">
+            08 • Nikoly
+        </div>
+
+
+    </div>
+
+
+    <div class="contact">
+
+        <strong>
+            Entre em contato
+        </strong>
+
+
+        <br>
+
+
+        <a
+            href="mailto:mariashafiq0405@gmail.com">
+
+            mariashafiq0405@gmail.com
+
+        </a>
+
+    </div>
+
 </section>
-<section id="processo">
-<h2 class="title">Como o shampoo é produzido</h2>
-<p class="subtitle">
-Etapas propostas para a produção de um shampoo
-com uma abordagem mais sustentável.
-</p>
-<div class="steps">
-<div class="step">
-<div class="number">1</div>
-<h3>Seleção</h3>
-<p>
-Seleção dos ingredientes e matérias-primas
-utilizados na formulação.
-</p>
-</div>
-<div class="step">
-<div class="number">2</div>
-<h3>Mistura</h3>
-<p>
-Os ingredientes são incorporados gradualmente
-para formar a base do shampoo.
-</p>
-</div>
-<div class="step">
-<div class="number">3</div>
-<h3>Ajustes</h3>
-<p>
-A formulação é ajustada para alcançar
-textura e características adequadas.
-</p>
-</div>
-<div class="step">
-<div class="number">4</div>
-<h3>Embalagem</h3>
-<p>
-O produto é acondicionado em uma embalagem
-considerando a redução de resíduos.
-</p>
-</div>
-</div>
-</section>
-<section class="contact">
-<div class="contact-content">
-<h2 class="title">Faça parte da mudança</h2>
-<p>
-Pequenas escolhas podem contribuir para
-um futuro mais consciente.
-</p>
-<a href="mailto:contato@aurea.com" class="button">
-Entre em contato
-</a>
-</div>
-</section>
-    <telefone para contato (27) 99293-8301 ></telefone>
-    <feito por Adryan, Angelina, Lucas, Luiz Felipe, Maria Clara, Mateus, Nathallya e Nikoly ></feito>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
 <footer>
-<p>© 2026 ÁUREA — Beleza que transforma.</p>
-<p>Projeto acadêmico.</p>
+
+    <h2>
+        ÁUREA
+    </h2>
+
+
+    <p>
+        Beleza que cuida do futuro.
+    </p>
+
+
+    <br>
+
+
+    <p>
+        Projeto escolar • 2026
+    </p>
+
 </footer>
+
+
+<!-- =====================================================
+     JAVASCRIPT — CARRINHO
+===================================================== -->
+
+<script>
+
+let cart = [];
+
+let discount = 0;
+
+
+/* ADICIONAR PRODUTO */
+
+function addToCart(name, price) {
+
+    const existing =
+        cart.find(
+            item => item.name === name
+        );
+
+
+    if (existing) {
+
+        existing.quantity++;
+
+    } else {
+
+        cart.push({
+
+            name: name,
+
+            price: price,
+
+            quantity: 1
+
+        });
+
+    }
+
+
+    updateCart();
+
+    openCart();
+
+}
+
+
+/* ATUALIZAR */
+
+function updateCart() {
+
+    const container =
+        document.getElementById(
+            "cart-items"
+        );
+
+
+    const count =
+        document.getElementById(
+            "cart-count"
+        );
+
+
+    const totalElement =
+        document.getElementById(
+            "cart-total"
+        );
+
+
+    container.innerHTML = "";
+
+
+    let total = 0;
+
+    let totalItems = 0;
+
+
+    if (cart.length === 0) {
+
+        container.innerHTML =
+            "<p>Seu carrinho está vazio.</p>";
+
+    }
+
+
+    cart.forEach(
+        (item,index) => {
+
+            total +=
+                item.price *
+                item.quantity;
+
+
+            totalItems +=
+                item.quantity;
+
+
+            const div =
+                document.createElement(
+                    "div"
+                );
+
+
+            div.className =
+                "cart-item";
+
+
+            div.innerHTML = `
+
+                <div>
+
+                    <strong>
+                        ${item.name}
+                    </strong>
+
+                    <p>
+                        R$
+                        ${item.price
+                        .toFixed(2)
+                        .replace(".", ",")}
+                    </p>
+
+                    <button
+                        class="remove"
+                        onclick="removeItem(${index})">
+
+                        Remover
+
+                    </button>
+
+                </div>
+
+
+                <div class="quantity">
+
+                    <button
+                        onclick="changeQuantity(
+                            ${index},
+                            -1
+                        )">
+
+                        −
+
+                    </button>
+
+
+                    <strong>
+                        ${item.quantity}
+                    </strong>
+
+
+                    <button
+                        onclick="changeQuantity(
+                            ${index},
+                            1
+                        )">
+
+                        +
+
+                    </button>
+
+                </div>
+
+            `;
+
+
+            container.appendChild(div);
+
+        }
+    );
+
+
+    total =
+        total -
+        (total * discount);
+
+
+    count.textContent =
+        totalItems;
+
+
+    totalElement.textContent =
+        total
+        .toFixed(2)
+        .replace(".", ",");
+
+}
+
+
+/* QUANTIDADE */
+
+function changeQuantity(
+    index,
+    amount
+) {
+
+    cart[index].quantity += amount;
+
+
+    if (
+        cart[index].quantity <= 0
+    ) {
+
+        cart.splice(index,1);
+
+    }
+
+
+    updateCart();
+
+}
+
+
+/* REMOVER */
+
+function removeItem(index) {
+
+    cart.splice(index,1);
+
+    updateCart();
+
+}
+
+
+/* CUPOM */
+
+function applyCoupon() {
+
+    const value =
+        document
+        .getElementById("coupon")
+        .value
+        .toUpperCase();
+
+
+    if (value === "AUREA10") {
+
+        discount = 0.10;
+
+
+        alert(
+            "🌿 Cupom aplicado!\n\n10% de desconto."
+        );
+
+
+        updateCart();
+
+    } else {
+
+        alert(
+            "Cupom inválido."
+        );
+
+    }
+
+}
+
+
+/* ABRIR */
+
+function openCart() {
+
+    document
+    .getElementById("cart")
+    .classList
+    .add("active");
+
+}
+
+
+/* FECHAR */
+
+function closeCart() {
+
+    document
+    .getElementById("cart")
+    .classList
+    .remove("active");
+
+}
+
+
+/* CHECKOUT */
+
+function checkout() {
+
+    if (cart.length === 0) {
+
+        alert(
+            "Seu carrinho está vazio!"
+        );
+
+        return;
+
+    }
+
+
+    let total = 0;
+
+
+    cart.forEach(
+        item => {
+
+            total +=
+                item.price *
+                item.quantity;
+
+        }
+    );
+
+
+    total =
+        total -
+        (total * discount);
+
+
+    alert(
+
+        "🌿 ÁUREA 🌿\n\n" +
+
+        "Pedido preparado com sucesso!\n\n" +
+
+        "Total: R$ " +
+
+        total
+        .toFixed(2)
+        .replace(".", ",") +
+
+        "\n\n" +
+
+        "Esta é uma demonstração de " +
+        "checkout para o projeto escolar."
+
+    );
+
+}
+
+
+/* INICIALIZAÇÃO */
+
+updateCart();
+
+</script>
+
 </body>
 </html>
